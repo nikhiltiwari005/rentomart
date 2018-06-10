@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(array('domain' => '{subdomain}.'.env('APP_ENV')), function () {
+Route::group(array('domain' => '{subdomain}.'.env('APP_DOMAIN')), function () {
   
     Route::get('/', function ($subdomain) {
   	
