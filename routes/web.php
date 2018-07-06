@@ -10,16 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(array('domain' => '{subdomain}.'.env('APP_DOMAIN')), function () {
-  
-    Route::get('/', function ($subdomain) {
-  	
-    	return view('welcome', compact('subdomain'));
-  
-    });
+Route::group(array('domain' => '{subdomain}.' . env('APP_DOMAIN')), function () {
+    Route::get('/', 'HomeController@index');
 });
 
-Route::get('/', function () {
-	$subdomain = '';
-	return view('welcome', compact('subdomain'));
-});
+Route::get('/', 'HomeController@index');
